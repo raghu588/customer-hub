@@ -17,7 +17,6 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SuppressWarnings("deprecation")
 @WebMvcTest(CustomerController.class)
 
 class CustomerControllerTest {

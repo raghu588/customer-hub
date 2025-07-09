@@ -4,9 +4,10 @@ package com.demo.customer.controller;
 import com.demo.customer.entity.Customer;
 import com.demo.customer.service.CustomerService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,6 +18,7 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
+    @Autowired
     public CustomerController(CustomerService customerService) {
         this.customerService = customerService;
     }
@@ -39,13 +41,13 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer createCustomer(@RequestBody Customer customer) {
+    public Customer createCustomer(@Valid @RequestBody Customer customer) {
         log.info("Creating new customer: {}", customer);
         return customerService.createCustomer(customer);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Customer> updateCustomer(@PathVariable UUID id, @RequestBody Customer customerDetails) {
+    public ResponseEntity<Customer> updateCustomer(@PathVariable UUID id, @Valid @RequestBody Customer customerDetails) {
         try {
             log.info("Updating customer with id: {} with details: {}", id, customerDetails);
             return ResponseEntity.ok(customerService.updateCustomer(id, customerDetails));
