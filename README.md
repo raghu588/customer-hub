@@ -30,7 +30,7 @@ A Spring Boot-based RESTful API for managing customer data, with full CRUD opera
 - MySQL (running locally on default port)
 
 ### Clone the Repository
-git clone -b cust-dev-task1 https://github.com/raghu588/customer-hub.git cd customer-hub
+git clone -b cust-dev-task1 https://github.com/raghu588/customer-hub.git 
 
 ### Configure Database
 
