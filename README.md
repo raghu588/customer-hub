@@ -10,6 +10,7 @@ A Spring Boot-based RESTful API for managing customer data, with full CRUD opera
 - Command-line client for API interaction
 - Solid API contracts with DTOs
 - MySQL database integration
+- Containerization with Docker and Deployments in kubernetes  with MiniKube.
 
 ## Tech Stack
 
@@ -20,6 +21,9 @@ A Spring Boot-based RESTful API for managing customer data, with full CRUD opera
 - RestAssured (integration testing)
 - WireMock (mocking external dependencies)
 - Command-line client (Spring Boot CLI)
+- Docker desktop
+- minikube
+- postman
 
 ## Getting Started
 
