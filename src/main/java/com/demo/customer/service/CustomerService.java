@@ -2,6 +2,7 @@ package com.demo.customer.service;
 
 
 import com.demo.customer.entity.Customer;
+import com.demo.customer.exception.ResourceNotFoundException;
 import com.demo.customer.repository.CustomerRepository;
 import io.micrometer.core.instrument.MeterRegistry;
 import lombok.extern.slf4j.Slf4j;
@@ -37,12 +38,19 @@ public class CustomerService {
 
     public Customer createCustomer(Customer customer) {
         log.info("Creating new customer: {}", customer);
+        if (customer == null) {
+            throw new ResourceNotFoundException("Customer Data is  null");
+        }
         meterRegistry.counter("customer.created.count").increment();
         customer.setId(UUID.randomUUID());
         return customerRepository.save(customer);
     }
 
     public Customer updateCustomer(UUID id, Customer customerDetails) {
+
+        if (customerDetails == null) {
+            throw new ResourceNotFoundException("Customer Data is  null");
+        }
         Customer customer = getCustomerById(id);
         customer.setFirstName(customerDetails.getFirstName());
         customer.setMiddleName(customerDetails.getMiddleName());

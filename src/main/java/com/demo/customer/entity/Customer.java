@@ -19,22 +19,22 @@ public class Customer {
     private UUID id;
 
     @Column(name = "FirstName", nullable = false, length = 255)
-    @JsonProperty("FirstName")
+    @JsonProperty("firstName")
     private String firstName;
 
     @Column(name = "MiddleName", length = 255)
-    @JsonProperty("MiddleName")
+    @JsonProperty("middleName")
     private String middleName;
 
     @Column(name = "LastName", nullable = false, length = 255)
-    @JsonProperty("LastName")
+    @JsonProperty("lastName")
     private String lastName;
 
     @Column(name = "EmailAddress", nullable = false, unique = true, length = 255)
-    @JsonProperty("EmailAddress")
+    @JsonProperty("emailAddress")
     private String emailAddress;
 
     @Column(name = "PhoneNumber", length = 20)
-    @JsonProperty("PhoneNumber")
+    @JsonProperty("phoneNumber")
     private String phoneNumber;
 }
