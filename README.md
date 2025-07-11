@@ -63,4 +63,14 @@ Sample JSON payload:
   "phoneNumber": "+1 (999) 888-4567"
 }
 
+Note:
+Containerization: refer Dockerfile
+Kubernetes : Refer app-depoyment,db-deployment yaml.
+CI/CD: refer Jenkinsfile
+App Integration:https://github.com/raghu588/Custmer-hub-cli
+
+Observability:
+Used SLF4J for structured logging.
+Used Micrometer for metrics (Prometheus).
+// OpenTelemetry for distributed tracing.
 
