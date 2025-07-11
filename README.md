@@ -1,3 +1,4 @@
+
 # Customer Hub
 
 A Spring Boot-based RESTful API for managing customer data, with full CRUD operations and integration tests. Includes a command-line client for API consumption.
@@ -73,4 +74,3 @@ Observability:
 Used SLF4J for structured logging.
 Used Micrometer for metrics (Prometheus).
 // OpenTelemetry for distributed tracing.
-
